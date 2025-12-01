@@ -3,7 +3,7 @@ package day03
 import (
 	"fmt"
 
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/files"
 )
 
 var lines []string

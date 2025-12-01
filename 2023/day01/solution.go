@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"janisvepris/aoc25/internal/conv"
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/conv"
+	"janisvepris/aoc/internal/files"
 )
 
 // TODO: redo this horrible solution

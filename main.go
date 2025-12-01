@@ -6,7 +6,7 @@ import (
 	"flag"
 	"fmt"
 
-	"janisvepris/aoc25/internal/str"
+	"janisvepris/aoc/internal/str"
 )
 
 func main() {

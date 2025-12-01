@@ -3,8 +3,8 @@ package day01
 import (
 	"fmt"
 
-	"janisvepris/aoc25/internal/conv"
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/conv"
+	"janisvepris/aoc/internal/files"
 )
 
 var lines []string

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"janisvepris/aoc25/internal/array"
-	"janisvepris/aoc25/internal/conv"
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/array"
+	"janisvepris/aoc/internal/conv"
+	"janisvepris/aoc/internal/files"
 )
 
 type SrcDestMap struct {

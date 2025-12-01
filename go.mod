@@ -1,3 +1,3 @@
-module janisvepris/aoc25
+module janisvepris/aoc
 
 go 1.25.4

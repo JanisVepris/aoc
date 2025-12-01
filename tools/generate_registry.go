@@ -72,7 +72,7 @@ func main() {
 					Year:       yearName,
 					Day:        dayName,
 					DayNum:     dayNum,
-					ImportPath: fmt.Sprintf("janisvepris/aoc25/%s/%s", yearName, dayName),
+					ImportPath: fmt.Sprintf("janisvepris/aoc/%s/%s", yearName, dayName),
 					ImportName: fmt.Sprintf("%s_%s", dayName, yearName),
 				})
 			}

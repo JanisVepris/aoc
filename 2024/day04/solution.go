@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"slices"
 
-	"janisvepris/aoc25/internal/files"
-	"janisvepris/aoc25/internal/str"
+	"janisvepris/aoc/internal/files"
+	"janisvepris/aoc/internal/str"
 )
 
 var lines []string

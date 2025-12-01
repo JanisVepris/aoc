@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"janisvepris/aoc25/internal/conv"
-	"janisvepris/aoc25/internal/files"
-	orderedmap "janisvepris/aoc25/internal/ordered_map"
+	"janisvepris/aoc/internal/conv"
+	"janisvepris/aoc/internal/files"
+	orderedmap "janisvepris/aoc/internal/ordered_map"
 )
 
 type Box struct {

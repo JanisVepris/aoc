@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/files"
 )
 
 type Point struct {

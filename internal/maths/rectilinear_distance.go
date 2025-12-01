@@ -1,6 +1,6 @@
 package maths
 
-import "janisvepris/aoc25/internal/points"
+import "janisvepris/aoc/internal/points"
 
 // RectilinearDistance calculates the rectilinear distance between two 2D points.
 // Also known as Manhattan distance or Taxicab distance

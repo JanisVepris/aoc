@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"slices"
 
-	"janisvepris/aoc25/internal/files"
-	"janisvepris/aoc25/internal/maths"
+	"janisvepris/aoc/internal/files"
+	"janisvepris/aoc/internal/maths"
 )
 
 type Direction int

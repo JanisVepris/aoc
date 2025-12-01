@@ -6,7 +6,7 @@ import (
 	"slices"
 	"strings"
 
-	"janisvepris/aoc25/internal/files"
+	"janisvepris/aoc/internal/files"
 )
 
 type Node struct {
