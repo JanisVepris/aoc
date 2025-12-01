@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"time"
 
+	day01_2022 "janisvepris/aoc25/2022/day01"
 	day01_2023 "janisvepris/aoc25/2023/day01"
 	day02_2023 "janisvepris/aoc25/2023/day02"
 	day03_2023 "janisvepris/aoc25/2023/day03"
@@ -49,6 +50,17 @@ func printTime(label string, d time.Duration) {
 }
 
 var solutions = map[string]map[string]func(){
+	"2022": {
+		"01": func() {
+			day01_2022.Setup()
+			start := time.Now()
+			day01_2022.Part1()
+			printTime("Part 1", time.Since(start))
+			start = time.Now()
+			day01_2022.Part2()
+			printTime("Part 2", time.Since(start))
+		},
+	},
 	"2023": {
 		"01": func() {
 			day01_2023.Setup()
