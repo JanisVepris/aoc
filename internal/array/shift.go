@@ -14,3 +14,9 @@ func Shift[T any](slice []T) (result []T) {
 
 	return
 }
+
+func Unshift[T any](slice []T, item T) (result []T) {
+	result = append([]T{item}, slice...)
+
+	return
+}
