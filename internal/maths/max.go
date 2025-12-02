@@ -1,10 +1,17 @@
 package maths
 
-// MaxInt returns the maximum of two integers
-func MaxInt(a int, b int) int {
-	if a > b {
-		return a
+// MaxInt returns the maximum integer from a variable number of integer arguments.
+func MaxInt(nums ...int) int {
+	if len(nums) == 0 {
+		panic("MaxInts requires at least one argument")
 	}
 
-	return b
+	max := nums[0]
+	for _, n := range nums[1:] {
+		if n > max {
+			max = n
+		}
+	}
+
+	return max
 }

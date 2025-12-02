@@ -1,4 +1,4 @@
-# Advent of code solutions 2023-2025
+# Advent of code solutions 2022-2025
 
 ### Run a specific day
 

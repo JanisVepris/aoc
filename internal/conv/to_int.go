@@ -14,6 +14,8 @@ func ToInt(in any) int {
 		return val
 	case rune:
 		return int(v - '0')
+	case uint8:
+		return int(v - '0')
 	default:
 		panic(fmt.Sprintf("cannot convert %T to int", v))
 	}

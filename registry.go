@@ -13,6 +13,7 @@ import (
 	day05_2022 "janisvepris/aoc/2022/day05"
 	day06_2022 "janisvepris/aoc/2022/day06"
 	day07_2022 "janisvepris/aoc/2022/day07"
+	day08_2022 "janisvepris/aoc/2022/day08"
 	day01_2023 "janisvepris/aoc/2023/day01"
 	day02_2023 "janisvepris/aoc/2023/day02"
 	day03_2023 "janisvepris/aoc/2023/day03"
@@ -119,6 +120,15 @@ var solutions = map[string]map[string]func(){
 			printTime("Part 1", time.Since(start))
 			start = time.Now()
 			day07_2022.Part2()
+			printTime("Part 2", time.Since(start))
+		},
+		"08": func() {
+			day08_2022.Setup()
+			start := time.Now()
+			day08_2022.Part1()
+			printTime("Part 1", time.Since(start))
+			start = time.Now()
+			day08_2022.Part2()
 			printTime("Part 2", time.Since(start))
 		},
 	},

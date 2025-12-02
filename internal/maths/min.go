@@ -1,10 +1,16 @@
 package maths
 
-// MinInt returns the smaller of two integers.
-func MinInt(a int, b int) int {
-	if a < b {
-		return a
+// MinInt returns the smallest of the provided integers.
+func MinInt(nums ...int) int {
+	if len(nums) == 0 {
+		panic("MinInt requires at least one argument")
 	}
 
-	return b
+	min := nums[0]
+	for _, n := range nums[1:] {
+		if n < min {
+			min = n
+		}
+	}
+	return min
 }
