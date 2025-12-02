@@ -1,4 +1,4 @@
-# Advent of code solutions 2022-2025
+# Advent of code solutions 2022-2025 in Go
 
 ### Run a specific day
 
@@ -8,6 +8,9 @@
 
 Put the value of your session cookie in a `session` file in the rood directory
 `go run . -y=2024 -d=13 -dl`
+
+### Generate a template for a solution
+`go run . -y=2024 -d13 -t`
 
 ### Generating solution registry
 
