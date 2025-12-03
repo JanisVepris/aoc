@@ -6,8 +6,9 @@
 
 ### Download input for a specific day
 
-Put the value of your session cookie in a `session` file in the root directory
-`go run . -y=2024 -d=13 -dl`
+Put the value of your session cookie in a `session` filein the root directory
+
+run `go run . -y=2024 -d=13 -dl`
 
 ### Generate a template for a solution
 `go run . -y=2024 -d13 -t`
