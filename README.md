@@ -28,5 +28,5 @@ run `go run . -y=2024 -d=13 -dl`
 go run . -y=2025 -d=4 -dl -t && go generate
 
 # run it
-go run . -y=2025 -d4
+go run . -y=2025 -d=4
 ```
