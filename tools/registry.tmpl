@@ -9,7 +9,7 @@ import (
 {{range .Solutions}}	{{.ImportName}} "{{.ImportPath}}"
 {{end}})
 
-func printTime(label string, d time.Duration) {
+func printTime(d time.Duration) {
 	us := d.Microseconds()
 
 	minutes := us / 60000000
@@ -24,17 +24,19 @@ func printTime(label string, d time.Duration) {
 	fmt.Printf("(in %dm %ds %dms %dµs)\n", minutes, seconds, milliseconds, us)
 }
 
+func runSolution(setup, part1, part2 func()) {
+	setup()
+	start := time.Now()
+	part1()
+	printTime(time.Since(start))
+	start = time.Now()
+	part2()
+	printTime(time.Since(start))
+}
+
 var solutions = map[string]map[string]func(){
 {{range $year, $days := .SolutionsByYear}}	"{{$year}}": {
-{{range $days}}		"{{.DayNum}}": func() {
-			{{.ImportName}}.Setup()
-			start := time.Now()
-			{{.ImportName}}.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			{{.ImportName}}.Part2()
-			printTime("Part 2", time.Since(start))
-		},
+{{range $days}}		"{{.DayNum}}": func() { runSolution({{.ImportName}}.Setup, {{.ImportName}}.Part1, {{.ImportName}}.Part2) },
 {{end}}	},
 {{end}}}
 {{end}}

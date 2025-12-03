@@ -43,7 +43,7 @@ import (
 	day03_2025 "janisvepris/aoc/2025/day03"
 )
 
-func printTime(label string, d time.Duration) {
+func printTime(d time.Duration) {
 	us := d.Microseconds()
 
 	minutes := us / 60000000
@@ -58,329 +58,59 @@ func printTime(label string, d time.Duration) {
 	fmt.Printf("(in %dm %ds %dms %dµs)\n", minutes, seconds, milliseconds, us)
 }
 
+func runSolution(setup, part1, part2 func()) {
+	setup()
+	start := time.Now()
+	part1()
+	printTime(time.Since(start))
+	start = time.Now()
+	part2()
+	printTime(time.Since(start))
+}
+
 var solutions = map[string]map[string]func(){
 	"2022": {
-		"01": func() {
-			day01_2022.Setup()
-			start := time.Now()
-			day01_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day01_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"02": func() {
-			day02_2022.Setup()
-			start := time.Now()
-			day02_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day02_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"03": func() {
-			day03_2022.Setup()
-			start := time.Now()
-			day03_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day03_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"04": func() {
-			day04_2022.Setup()
-			start := time.Now()
-			day04_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day04_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"05": func() {
-			day05_2022.Setup()
-			start := time.Now()
-			day05_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day05_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"06": func() {
-			day06_2022.Setup()
-			start := time.Now()
-			day06_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day06_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"07": func() {
-			day07_2022.Setup()
-			start := time.Now()
-			day07_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day07_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"08": func() {
-			day08_2022.Setup()
-			start := time.Now()
-			day08_2022.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day08_2022.Part2()
-			printTime("Part 2", time.Since(start))
-		},
+		"01": func() { runSolution(day01_2022.Setup, day01_2022.Part1, day01_2022.Part2) },
+		"02": func() { runSolution(day02_2022.Setup, day02_2022.Part1, day02_2022.Part2) },
+		"03": func() { runSolution(day03_2022.Setup, day03_2022.Part1, day03_2022.Part2) },
+		"04": func() { runSolution(day04_2022.Setup, day04_2022.Part1, day04_2022.Part2) },
+		"05": func() { runSolution(day05_2022.Setup, day05_2022.Part1, day05_2022.Part2) },
+		"06": func() { runSolution(day06_2022.Setup, day06_2022.Part1, day06_2022.Part2) },
+		"07": func() { runSolution(day07_2022.Setup, day07_2022.Part1, day07_2022.Part2) },
+		"08": func() { runSolution(day08_2022.Setup, day08_2022.Part1, day08_2022.Part2) },
 	},
 	"2023": {
-		"01": func() {
-			day01_2023.Setup()
-			start := time.Now()
-			day01_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day01_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"02": func() {
-			day02_2023.Setup()
-			start := time.Now()
-			day02_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day02_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"03": func() {
-			day03_2023.Setup()
-			start := time.Now()
-			day03_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day03_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"04": func() {
-			day04_2023.Setup()
-			start := time.Now()
-			day04_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day04_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"05": func() {
-			day05_2023.Setup()
-			start := time.Now()
-			day05_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day05_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"06": func() {
-			day06_2023.Setup()
-			start := time.Now()
-			day06_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day06_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"07": func() {
-			day07_2023.Setup()
-			start := time.Now()
-			day07_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day07_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"08": func() {
-			day08_2023.Setup()
-			start := time.Now()
-			day08_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day08_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"09": func() {
-			day09_2023.Setup()
-			start := time.Now()
-			day09_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day09_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"10": func() {
-			day10_2023.Setup()
-			start := time.Now()
-			day10_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day10_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"11": func() {
-			day11_2023.Setup()
-			start := time.Now()
-			day11_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day11_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"12": func() {
-			day12_2023.Setup()
-			start := time.Now()
-			day12_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day12_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"13": func() {
-			day13_2023.Setup()
-			start := time.Now()
-			day13_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day13_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"14": func() {
-			day14_2023.Setup()
-			start := time.Now()
-			day14_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day14_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"15": func() {
-			day15_2023.Setup()
-			start := time.Now()
-			day15_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day15_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"16": func() {
-			day16_2023.Setup()
-			start := time.Now()
-			day16_2023.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day16_2023.Part2()
-			printTime("Part 2", time.Since(start))
-		},
+		"01": func() { runSolution(day01_2023.Setup, day01_2023.Part1, day01_2023.Part2) },
+		"02": func() { runSolution(day02_2023.Setup, day02_2023.Part1, day02_2023.Part2) },
+		"03": func() { runSolution(day03_2023.Setup, day03_2023.Part1, day03_2023.Part2) },
+		"04": func() { runSolution(day04_2023.Setup, day04_2023.Part1, day04_2023.Part2) },
+		"05": func() { runSolution(day05_2023.Setup, day05_2023.Part1, day05_2023.Part2) },
+		"06": func() { runSolution(day06_2023.Setup, day06_2023.Part1, day06_2023.Part2) },
+		"07": func() { runSolution(day07_2023.Setup, day07_2023.Part1, day07_2023.Part2) },
+		"08": func() { runSolution(day08_2023.Setup, day08_2023.Part1, day08_2023.Part2) },
+		"09": func() { runSolution(day09_2023.Setup, day09_2023.Part1, day09_2023.Part2) },
+		"10": func() { runSolution(day10_2023.Setup, day10_2023.Part1, day10_2023.Part2) },
+		"11": func() { runSolution(day11_2023.Setup, day11_2023.Part1, day11_2023.Part2) },
+		"12": func() { runSolution(day12_2023.Setup, day12_2023.Part1, day12_2023.Part2) },
+		"13": func() { runSolution(day13_2023.Setup, day13_2023.Part1, day13_2023.Part2) },
+		"14": func() { runSolution(day14_2023.Setup, day14_2023.Part1, day14_2023.Part2) },
+		"15": func() { runSolution(day15_2023.Setup, day15_2023.Part1, day15_2023.Part2) },
+		"16": func() { runSolution(day16_2023.Setup, day16_2023.Part1, day16_2023.Part2) },
 	},
 	"2024": {
-		"01": func() {
-			day01_2024.Setup()
-			start := time.Now()
-			day01_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day01_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"02": func() {
-			day02_2024.Setup()
-			start := time.Now()
-			day02_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day02_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"03": func() {
-			day03_2024.Setup()
-			start := time.Now()
-			day03_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day03_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"04": func() {
-			day04_2024.Setup()
-			start := time.Now()
-			day04_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day04_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"05": func() {
-			day05_2024.Setup()
-			start := time.Now()
-			day05_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day05_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"06": func() {
-			day06_2024.Setup()
-			start := time.Now()
-			day06_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day06_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"07": func() {
-			day07_2024.Setup()
-			start := time.Now()
-			day07_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day07_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"08": func() {
-			day08_2024.Setup()
-			start := time.Now()
-			day08_2024.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day08_2024.Part2()
-			printTime("Part 2", time.Since(start))
-		},
+		"01": func() { runSolution(day01_2024.Setup, day01_2024.Part1, day01_2024.Part2) },
+		"02": func() { runSolution(day02_2024.Setup, day02_2024.Part1, day02_2024.Part2) },
+		"03": func() { runSolution(day03_2024.Setup, day03_2024.Part1, day03_2024.Part2) },
+		"04": func() { runSolution(day04_2024.Setup, day04_2024.Part1, day04_2024.Part2) },
+		"05": func() { runSolution(day05_2024.Setup, day05_2024.Part1, day05_2024.Part2) },
+		"06": func() { runSolution(day06_2024.Setup, day06_2024.Part1, day06_2024.Part2) },
+		"07": func() { runSolution(day07_2024.Setup, day07_2024.Part1, day07_2024.Part2) },
+		"08": func() { runSolution(day08_2024.Setup, day08_2024.Part1, day08_2024.Part2) },
 	},
 	"2025": {
-		"01": func() {
-			day01_2025.Setup()
-			start := time.Now()
-			day01_2025.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day01_2025.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"02": func() {
-			day02_2025.Setup()
-			start := time.Now()
-			day02_2025.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day02_2025.Part2()
-			printTime("Part 2", time.Since(start))
-		},
-		"03": func() {
-			day03_2025.Setup()
-			start := time.Now()
-			day03_2025.Part1()
-			printTime("Part 1", time.Since(start))
-			start = time.Now()
-			day03_2025.Part2()
-			printTime("Part 2", time.Since(start))
-		},
+		"01": func() { runSolution(day01_2025.Setup, day01_2025.Part1, day01_2025.Part2) },
+		"02": func() { runSolution(day02_2025.Setup, day02_2025.Part1, day02_2025.Part2) },
+		"03": func() { runSolution(day03_2025.Setup, day03_2025.Part1, day03_2025.Part2) },
 	},
 }
 
