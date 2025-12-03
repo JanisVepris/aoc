@@ -40,6 +40,7 @@ import (
 	day08_2024 "janisvepris/aoc/2024/day08"
 	day01_2025 "janisvepris/aoc/2025/day01"
 	day02_2025 "janisvepris/aoc/2025/day02"
+	day03_2025 "janisvepris/aoc/2025/day03"
 )
 
 func printTime(label string, d time.Duration) {
@@ -369,6 +370,15 @@ var solutions = map[string]map[string]func(){
 			printTime("Part 1", time.Since(start))
 			start = time.Now()
 			day02_2025.Part2()
+			printTime("Part 2", time.Since(start))
+		},
+		"03": func() {
+			day03_2025.Setup()
+			start := time.Now()
+			day03_2025.Part1()
+			printTime("Part 1", time.Since(start))
+			start = time.Now()
+			day03_2025.Part2()
 			printTime("Part 2", time.Since(start))
 		},
 	},
