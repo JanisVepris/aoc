@@ -3,12 +3,12 @@ package renderer
 import "os"
 
 type Renderer[T comparable] interface {
-	SetData(data []T) *BrailleRenderer[T]
-	SetOutput(output *os.File) *BrailleRenderer[T]
-	SetLineWidth(lineWidth int) *BrailleRenderer[T]
-	SetOnFunc(onFunc func(value T) bool) *BrailleRenderer[T]
-	SetOnValue(value T) *BrailleRenderer[T]
-	Append(values ...T) *BrailleRenderer[T]
+	SetData(data []T)
+	SetOutput(output *os.File)
+	SetLineWidth(lineWidth int)
+	SetOnFunc(onFunc func(value T) bool)
+	SetOnValue(value T)
+	Append(values ...T)
 	Clear()
 	ResetCursor()
 
@@ -23,6 +23,5 @@ type Renderer[T comparable] interface {
 	Len() int
 	Progress() (cursor, total int)
 
-	Clone() *BrailleRenderer[T]
 	Advance()
 }

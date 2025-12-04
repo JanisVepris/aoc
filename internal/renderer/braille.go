@@ -22,33 +22,28 @@ func NewBrailleRenderer[T comparable](lineWidth int) *BrailleRenderer[T] {
 	}
 }
 
-func (b *BrailleRenderer[T]) SetData(data []T) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) SetData(data []T) {
 	b.data = data
 	b.cursor = 0
-	return b
 }
 
-func (b *BrailleRenderer[T]) SetOutput(output *os.File) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) SetOutput(output *os.File) {
 	b.out = output
-	return b
 }
 
 // SetLineWidth sets the width of each line in the braille rendering.
-func (b *BrailleRenderer[T]) SetLineWidth(lineWidth int) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) SetLineWidth(lineWidth int) {
 	b.lineWidth = lineWidth
-	return b
 }
 
 // SetOnFunc sets the function that determines whether a value is considered "on" in the braille rendering.
-func (b *BrailleRenderer[T]) SetOnFunc(onFunc func(value T) bool) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) SetOnFunc(onFunc func(value T) bool) {
 	b.onFunc = onFunc
-	return b
 }
 
 // SetOnValue sets the value that will be considered "on" in the braille rendering. This takes precedence over any existing onFunc.
-func (b *BrailleRenderer[T]) SetOnValue(value T) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) SetOnValue(value T) {
 	b.onVal = value
-	return b
 }
 
 // Clone creates a copy of the current BrailleRenderer with the same settings and data.
@@ -67,9 +62,8 @@ func (b *BrailleRenderer[T]) Clone() *BrailleRenderer[T] {
 }
 
 // Append adds values to the braille renderer's data.
-func (b *BrailleRenderer[T]) Append(values ...T) *BrailleRenderer[T] {
+func (b *BrailleRenderer[T]) Append(values ...T) {
 	b.data = append(b.data, values...)
-	return b
 }
 
 // RenderAtCursor renders a braille character at the current cursor position to a string
