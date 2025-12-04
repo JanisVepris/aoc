@@ -1,4 +1,4 @@
-package braille
+package renderer
 
 import (
 	"os"
@@ -14,8 +14,8 @@ type BrailleRenderer[T comparable] struct {
 	lineWidth int
 }
 
-func NewBrailleRenderer[T comparable](lineWidth int) BrailleRenderer[T] {
-	return BrailleRenderer[T]{
+func NewBrailleRenderer[T comparable](lineWidth int) *BrailleRenderer[T] {
+	return &BrailleRenderer[T]{
 		lineWidth: lineWidth,
 		cursor:    0,
 		out:       os.Stdout,
