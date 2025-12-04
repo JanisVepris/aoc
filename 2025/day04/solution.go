@@ -34,20 +34,13 @@ func Setup() {
 func Part1() {
 	result := 0
 
-	counts := make([][]int, height)
-	for y := range height {
-		counts[y] = make([]int, width)
-	}
-
-	paperPositions := [][2]int{} // y,x
-
 	for y := range height {
 		for x := range width {
 			if grid[y][x] != '@' {
 				continue
 			}
 
-			paperPositions = append(paperPositions, [2]int{y, x})
+			neighbors := 0
 
 			for _, offset := range offsets {
 				ny := y + offset[0]
@@ -57,14 +50,14 @@ func Part1() {
 					continue
 				}
 
-				counts[ny][nx] += 1
+				if grid[ny][nx] == '@' {
+					neighbors += 1
+				}
 			}
-		}
-	}
 
-	for _, pos := range paperPositions {
-		if counts[pos[0]][pos[1]] < 4 {
-			result += 1
+			if neighbors < 4 {
+				result += 1
+			}
 		}
 	}
 
