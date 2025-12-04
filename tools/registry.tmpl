@@ -3,35 +3,21 @@ package main
 
 {{if .Solutions}}
 import (
-	"fmt"
 	"time"
+	"janisvepris/aoc/internal/crap"
 
 {{range .Solutions}}	{{.ImportName}} "{{.ImportPath}}"
 {{end}})
 
-func printTime(d time.Duration) {
-	us := d.Microseconds()
-
-	minutes := us / 60000000
-	us %= 60000000
-
-	seconds := us / 1000000
-	us %= 1000000
-
-	milliseconds := us / 1000
-	us %= 1000
-
-	fmt.Printf("(in %dm %ds %dms %dµs)\n", minutes, seconds, milliseconds, us)
-}
 
 func runSolution(setup, part1, part2 func()) {
 	setup()
 	start := time.Now()
 	part1()
-	printTime(time.Since(start))
+	crap.PrintDuration(time.Since(start))
 	start = time.Now()
 	part2()
-	printTime(time.Since(start))
+	crap.PrintDuration(time.Since(start))
 }
 
 var solutions = map[string]map[string]func(){

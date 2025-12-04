@@ -5,7 +5,10 @@ package main
 import (
 	"flag"
 	"fmt"
+	"slices"
+	"time"
 
+	"janisvepris/aoc/internal/crap"
 	"janisvepris/aoc/internal/str"
 )
 
@@ -56,10 +59,20 @@ func main() {
 	}
 
 	if day == "00" {
-		for d, solution := range yearSolutions {
-			fmt.Printf("=== %s-%s ===\n", year, d)
+		keys := make([]string, 0, len(yearSolutions))
+		for key := range yearSolutions {
+			keys = append(keys, key)
+		}
+		slices.Sort(keys)
+
+		now := time.Now()
+		for _, key := range keys {
+			fmt.Printf("\n=== %s-%s ===\n", year, key)
+			solution := yearSolutions[key]
 			solution()
 		}
+		fmt.Printf("\n====== Yeah %s done ======\n", year)
+		crap.PrintDuration(time.Since(now))
 
 		return
 	}
