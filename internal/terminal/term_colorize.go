@@ -18,3 +18,11 @@ const (
 func TermColorize(text string, color Color) string {
 	return fmt.Sprintf("\033[%sm%s\033[0m", color, text)
 }
+
+func SetColor(color Color) {
+	fmt.Printf("\033[%sm", color)
+}
+
+func ResetColor() {
+	fmt.Print("\033[0m")
+}
