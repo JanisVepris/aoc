@@ -3,6 +3,7 @@ package colors
 import (
 	"image/color"
 	"math"
+	"strconv"
 )
 
 func HsvToRGBA(h, s, v float64) color.RGBA {
@@ -35,5 +36,43 @@ func HsvToRGBA(h, s, v float64) color.RGBA {
 		G: uint8(g * 255),
 		B: uint8(b * 255),
 		A: 255,
+	}
+}
+
+func HexToRGBA(s string) color.RGBA {
+	if len(s) != 7 && len(s) != 9 {
+		panic("color must be #RRGGBB or #RRGGBBAA")
+	}
+	if s[0] != '#' {
+		panic("color must start with #")
+	}
+
+	r, err := strconv.ParseUint(s[1:3], 16, 8)
+	if err != nil {
+		return color.RGBA{}
+	}
+	g, err := strconv.ParseUint(s[3:5], 16, 8)
+	if err != nil {
+		return color.RGBA{}
+	}
+	b, err := strconv.ParseUint(s[5:7], 16, 8)
+	if err != nil {
+		return color.RGBA{}
+	}
+
+	a := uint8(255)
+	if len(s) == 9 {
+		v, err := strconv.ParseUint(s[7:9], 16, 8)
+		if err != nil {
+			return color.RGBA{}
+		}
+		a = uint8(v)
+	}
+
+	return color.RGBA{
+		R: uint8(r),
+		G: uint8(g),
+		B: uint8(b),
+		A: a,
 	}
 }
