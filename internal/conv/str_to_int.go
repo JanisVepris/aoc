@@ -11,3 +11,13 @@ func StrToInt(numberString string) int {
 
 	return result
 }
+
+// StrToFloat64 converts a string representing a number to its float64 value.
+func StrToFloat64(numberString string) float64 {
+	result, err := strconv.ParseFloat(numberString, 64)
+	if err != nil {
+		panic(err)
+	}
+
+	return result
+}
