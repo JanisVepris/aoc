@@ -34,6 +34,7 @@ import (
 	day14_2023 "janisvepris/aoc/2023/day14"
 	day15_2023 "janisvepris/aoc/2023/day15"
 	day16_2023 "janisvepris/aoc/2023/day16"
+	day17_2023 "janisvepris/aoc/2023/day17"
 	day01_2024 "janisvepris/aoc/2024/day01"
 	day02_2024 "janisvepris/aoc/2024/day02"
 	day03_2024 "janisvepris/aoc/2024/day03"
@@ -99,6 +100,7 @@ var solutions = map[string]map[string]func(){
 		"14": func() { runSolution(day14_2023.Setup, day14_2023.Part1, day14_2023.Part2) },
 		"15": func() { runSolution(day15_2023.Setup, day15_2023.Part1, day15_2023.Part2) },
 		"16": func() { runSolution(day16_2023.Setup, day16_2023.Part1, day16_2023.Part2) },
+		"17": func() { runSolution(day17_2023.Setup, day17_2023.Part1, day17_2023.Part2) },
 	},
 	"2024": {
 		"01": func() { runSolution(day01_2024.Setup, day01_2024.Part1, day01_2024.Part2) },
