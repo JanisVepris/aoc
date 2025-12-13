@@ -53,6 +53,7 @@ import (
 	day09_2025 "janisvepris/aoc/2025/day09"
 	day10_2025 "janisvepris/aoc/2025/day10"
 	day11_2025 "janisvepris/aoc/2025/day11"
+	day12_2025 "janisvepris/aoc/2025/day12"
 )
 
 
@@ -121,6 +122,7 @@ var solutions = map[string]map[string]func(){
 		"09": func() { runSolution(day09_2025.Setup, day09_2025.Part1, day09_2025.Part2) },
 		"10": func() { runSolution(day10_2025.Setup, day10_2025.Part1, day10_2025.Part2) },
 		"11": func() { runSolution(day11_2025.Setup, day11_2025.Part1, day11_2025.Part2) },
+		"12": func() { runSolution(day12_2025.Setup, day12_2025.Part1, day12_2025.Part2) },
 	},
 }
 
